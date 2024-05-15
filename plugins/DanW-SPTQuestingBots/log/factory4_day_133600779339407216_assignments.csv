@@ -1,0 +1,7 @@
+Bot Name,Bot Nickname,Bot Difficulty,Bot Level,Assignment Status,Quest Name,Objective Name,Step Number,Start Time,End Time
+Bot10,"Norris Hively",normal,41,Failed,"1st Floor Office","1st Floor Office: Objective #1","1","14:41:58","14:43:21",
+Bot11,"Tyson Ratley",normal,35,Failed,"3rd Floor Hallway","3rd Floor Hallway: Objective #1","1","14:41:58","14:43:15",
+Bot8,"Stanford Landwehr",hard,58,Failed,"3rd Floor Office Rush","3rd Floor Office Rush: Objective #1","1","14:41:58","14:42:16",
+Bot7,"Cordell Cowie",hard,36,Completed,"Bathroom Key Spawns","Bathroom Key Spawns: Objective #2","1","14:41:58","14:42:00",
+Bot7,"Cordell Cowie",hard,36,Failed,"Bathroom Key Spawns","Bathroom Key Spawns: Objective #1","1","14:42:05","14:42:58",
+Bot9,"Raul Poulos",normal,42,Failed,"Crates Outside of Stairwell","Crates Outside of Stairwell: Objective #1","1","14:41:58","14:45:02",
