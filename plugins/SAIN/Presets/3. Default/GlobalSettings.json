@@ -26,7 +26,6 @@
     "ShiftCoverResetTime": 10.0,
     "CoverMinHeight": 0.75,
     "CoverMinEnemyDistance": 8.0,
-    "CoverUpdateFrequency": 0.25,
     "DebugCoverFinder": false
   },
   "Extract": {

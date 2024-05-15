@@ -12,6 +12,7 @@
     "PowerLevelMin": 0.0,
     "PowerLevelMax": 40.0,
     "AggressionMultiplier": 0.75,
+    "SearchWaitMultiplier": 1.0,
     "HoldGroundBaseTime": 0.5,
     "HoldGroundMinRandom": 0.66,
     "HoldGroundMaxRandom": 1.5,

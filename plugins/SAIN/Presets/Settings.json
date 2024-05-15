@@ -1,7 +1,7 @@
 {
   "SelectedPreset": "6. Nasties custom 5.8.1",
   "DefaultPreset": "3. Default",
-  "AdvancedBotConfigs": false,
+  "AdvancedBotConfigs": true,
   "ConfigScaling": 1.0,
   "GlobalDebugMode": false,
   "ForceBotsToRunAround": false,
