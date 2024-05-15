@@ -4,6 +4,7 @@
   "AdvancedBotConfigs": false,
   "ConfigScaling": 1.0,
   "GlobalDebugMode": false,
+  "ForceBotsToRunAround": false,
   "DebugExternal": false,
   "DrawDebugGizmos": false,
   "DrawDebugLabels": false,
