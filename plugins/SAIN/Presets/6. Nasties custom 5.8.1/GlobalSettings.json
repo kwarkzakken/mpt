@@ -1,6 +1,6 @@
 {
   "General": {
-    "GlobalDifficultyModifier": 1.05,
+    "GlobalDifficultyModifier": 1.1,
     "PerformanceMode": false,
     "NewDoorOpening": true,
     "LimitAIvsAI": true,
@@ -10,7 +10,7 @@
     "NotLookingTimeLimit": 4.0,
     "NotLookingAngle": 45.0,
     "NotLookingVisionSpeedModifier": 1.1,
-    "NotLookingAccuracyAmount": 0.33
+    "NotLookingAccuracyAmount": 0.66
   },
   "Aiming": {
     "AccuracySpreadMultiGlobal": 0.65,
@@ -81,8 +81,8 @@
   "Look": {
     "GlobalVisionDistanceMultiplier": 1.75,
     "GlobalVisionSpeedModifier": 0.5,
-    "NightTimeVisionModifier": 0.3,
-    "NightTimeVisionModifierSnow": 0.4,
+    "NightTimeVisionModifier": 0.4,
+    "NightTimeVisionModifierSnow": 0.45,
     "HourDawnStart": 6.0,
     "HourDawnEnd": 8.0,
     "HourDuskStart": 20.0,
@@ -99,7 +99,7 @@
     "GlobalAggression": 1.5
   },
   "NoBushESP": {
-    "NoBushESPToggle": false,
+    "NoBushESPToggle": true,
     "NoBushESPEnhanced": false,
     "NoBushESPFrequency": 0.1,
     "NoBushESPEnhancedRatio": 0.5,
