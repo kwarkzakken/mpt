@@ -1,19 +1,19 @@
 {
   "General": {
-    "GlobalDifficultyModifier": 1.0,
+    "GlobalDifficultyModifier": 1.2,
     "PerformanceMode": false,
     "NewDoorOpening": true,
     "LimitAIvsAI": true,
     "BotsUseGrenades": true,
     "HeadShotProtection": false,
     "NotLookingToggle": false,
-    "NotLookingTimeLimit": 4.0,
+    "NotLookingTimeLimit": 4.2,
     "NotLookingAngle": 45.0,
-    "NotLookingVisionSpeedModifier": 1.1,
-    "NotLookingAccuracyAmount": 0.66
+    "NotLookingVisionSpeedModifier": 1.5,
+    "NotLookingAccuracyAmount": 0.75
   },
   "Aiming": {
-    "AccuracySpreadMultiGlobal": 0.65,
+    "AccuracySpreadMultiGlobal": 0.75,
     "FasterCQBReactionsGlobal": true
   },
   "Cover": {
@@ -44,7 +44,7 @@
   },
   "Hearing": {
     "GunshotAudioMultiplier": 1.25,
-    "FootstepAudioMultiplier": 1.1,
+    "FootstepAudioMultiplier": 1.25,
     "SuppressorModifier": 0.6,
     "SubsonicModifier": 0.33,
     "HearingDistances": {
@@ -79,8 +79,8 @@
     }
   },
   "Look": {
-    "GlobalVisionDistanceMultiplier": 1.75,
-    "GlobalVisionSpeedModifier": 0.5,
+    "GlobalVisionDistanceMultiplier": 1.5,
+    "GlobalVisionSpeedModifier": 0.8,
     "NightTimeVisionModifier": 0.4,
     "NightTimeVisionModifierSnow": 0.45,
     "HourDawnStart": 6.0,
@@ -99,15 +99,15 @@
     "GlobalAggression": 1.5
   },
   "NoBushESP": {
-    "NoBushESPToggle": true,
+    "NoBushESPToggle": false,
     "NoBushESPEnhanced": false,
     "NoBushESPFrequency": 0.1,
     "NoBushESPEnhancedRatio": 0.5,
     "NoBushESPDebugMode": false
   },
   "Shoot": {
-    "GlobalScatterMultiplier": 0.4,
-    "GlobalRecoilMultiplier": 0.6,
+    "GlobalScatterMultiplier": 0.75,
+    "GlobalRecoilMultiplier": 0.5,
     "MaxRecoil": 2.0,
     "AddRecoil": -1.0,
     "RecoilDecay": 0.45,

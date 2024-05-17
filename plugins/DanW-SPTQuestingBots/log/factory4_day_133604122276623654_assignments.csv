@@ -1,0 +1,7 @@
+Bot Name,Bot Nickname,Bot Difficulty,Bot Level,Assignment Status,Quest Name,Objective Name,Step Number,Start Time,End Time
+Bot3,"Jerome Marker",hard,26,Active,"Farming - Part 1","Zone place_SADOVOD_01_1","2","11:35:15","N/A",
+Bot1,"Андрей Подшивалов",hard,14,Completed,"Chemical - Part 3","Item Syringe with a chemical","1","11:35:15","11:35:16",
+Bot1,"Андрей Подшивалов",hard,14,Failed,"Delivery From the Past","Zone case_extraction","1","11:35:21","11:35:42",
+Bot5,"Mervin Bartel",hard,16,Pending,"Scout","Zone place_pacemaker_SCOUT_03","1","11:35:15","N/A",
+Bot2,"Валентин Сомов",hard,37,Failed,"3rd Floor Office","3rd Floor Office: Objective #1","1","11:35:15","11:35:20",
+Bot4,"Geraldo Koziol",hard,10,Failed,"Sanitary Standards - Part 1","Zone pumproom","1","11:35:15","11:35:47",

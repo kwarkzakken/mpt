@@ -1,7 +1,7 @@
 {
-  "Name": "BirdEye",
-  "WildSpawnType": "followerBirdEye",
-  "DifficultyModifier": 0.66,
+  "Name": "Kolontay Assault",
+  "WildSpawnType": "followerKolontayAssault",
+  "DifficultyModifier": 0.5,
   "Settings": {
     "easy": {
       "Aiming": {
@@ -10,15 +10,15 @@
         "FasterCQBReactionsDistance": 30.0,
         "FasterCQBReactionsMinimum": 0.33,
         "AccuracySpreadMulti": 1.0,
-        "MAX_AIMING_UPGRADE_BY_TIME": 0.15,
-        "COEF_IF_MOVE": 2.0,
+        "MAX_AIMING_UPGRADE_BY_TIME": 0.25,
+        "COEF_IF_MOVE": 1.5,
         "MAX_AIM_TIME": 1.5,
         "SHPERE_FRIENDY_FIRE_SIZE": 0.15,
         "RECALC_MUST_TIME": 1,
         "RECALC_MUST_TIME_MIN": 1,
         "RECALC_MUST_TIME_MAX": 2,
         "DAMAGE_TO_DISCARD_AIM_0_100": 100.0,
-        "BASE_HIT_AFFECTION_DELAY_SEC": 1.0,
+        "BASE_HIT_AFFECTION_DELAY_SEC": 0.77,
         "BASE_HIT_AFFECTION_MIN_ANG": 3.0,
         "BASE_HIT_AFFECTION_MAX_ANG": 5.0
       },
@@ -28,8 +28,8 @@
       "Change": {},
       "Core": {
         "VisibleAngle": 160.0,
-        "VisibleDistance": 250.0,
-        "GainSightCoef": 0.013,
+        "VisibleDistance": 142.0,
+        "GainSightCoef": 0.1,
         "ScatteringPerMeter": 0.045,
         "ScatteringClosePerMeter": 0.12,
         "HearingSense": 1.0,
@@ -40,7 +40,7 @@
         "TimeSinceSeenBeforeThrow": 3.0,
         "DELTA_NEXT_ATTEMPT": 2.0,
         "MIN_DIST_NOT_TO_THROW": 8.0,
-        "GrenadePrecision": 0.05,
+        "GrenadePrecision": 0.01,
         "MIN_THROW_GRENADE_DIST": 8.0,
         "CHANCE_TO_NOTIFY_ENEMY_GR_100": 100.0,
         "DELTA_GRENADE_START_TIME": 0.0,
@@ -79,7 +79,7 @@
       "Mind": {
         "Aggression": 1.0,
         "WeaponProficiency": 0.5,
-        "TalkFrequency": 2.0,
+        "TalkFrequency": 1.0,
         "CanTalk": true,
         "BotTaunts": true,
         "SquadTalk": true,
@@ -93,9 +93,9 @@
       "Patrol": {},
       "Scattering": {
         "ScatterMultiplier": 1.0,
-        "HandDamageRecoilMulti": 1.5,
-        "HandDamageScatteringMinMax": 1.5,
-        "HandDamageAccuracySpeed": 1.5
+        "HandDamageRecoilMulti": 1.35,
+        "HandDamageScatteringMinMax": 1.35,
+        "HandDamageAccuracySpeed": 1.35
       },
       "Shoot": {
         "RecoilMultiplier": 1.0,
@@ -104,8 +104,8 @@
         "MaxPointFireDistance": 80.0,
         "CAN_STOP_SHOOT_CAUSE_ANIMATOR": true,
         "CHANCE_TO_CHANGE_TO_AUTOMATIC_FIRE_100": 100.0,
-        "AUTOMATIC_FIRE_SCATTERING_COEF": 1.5,
-        "BASE_AUTOMATIC_TIME": 0.2,
+        "AUTOMATIC_FIRE_SCATTERING_COEF": 1.1,
+        "BASE_AUTOMATIC_TIME": 0.4,
         "RECOIL_DELTA_PRESS": 0.0
       }
     },
@@ -116,15 +116,15 @@
         "FasterCQBReactionsDistance": 30.0,
         "FasterCQBReactionsMinimum": 0.33,
         "AccuracySpreadMulti": 1.0,
-        "MAX_AIMING_UPGRADE_BY_TIME": 0.15,
-        "COEF_IF_MOVE": 2.0,
+        "MAX_AIMING_UPGRADE_BY_TIME": 0.25,
+        "COEF_IF_MOVE": 1.5,
         "MAX_AIM_TIME": 1.5,
         "SHPERE_FRIENDY_FIRE_SIZE": 0.15,
         "RECALC_MUST_TIME": 1,
         "RECALC_MUST_TIME_MIN": 1,
         "RECALC_MUST_TIME_MAX": 2,
         "DAMAGE_TO_DISCARD_AIM_0_100": 100.0,
-        "BASE_HIT_AFFECTION_DELAY_SEC": 1.0,
+        "BASE_HIT_AFFECTION_DELAY_SEC": 0.77,
         "BASE_HIT_AFFECTION_MIN_ANG": 3.0,
         "BASE_HIT_AFFECTION_MAX_ANG": 5.0
       },
@@ -134,8 +134,8 @@
       "Change": {},
       "Core": {
         "VisibleAngle": 160.0,
-        "VisibleDistance": 250.0,
-        "GainSightCoef": 0.013,
+        "VisibleDistance": 142.0,
+        "GainSightCoef": 0.1,
         "ScatteringPerMeter": 0.045,
         "ScatteringClosePerMeter": 0.12,
         "HearingSense": 1.0,
@@ -146,7 +146,7 @@
         "TimeSinceSeenBeforeThrow": 3.0,
         "DELTA_NEXT_ATTEMPT": 2.0,
         "MIN_DIST_NOT_TO_THROW": 8.0,
-        "GrenadePrecision": 0.05,
+        "GrenadePrecision": 0.01,
         "MIN_THROW_GRENADE_DIST": 8.0,
         "CHANCE_TO_NOTIFY_ENEMY_GR_100": 100.0,
         "DELTA_GRENADE_START_TIME": 0.0,
@@ -185,7 +185,7 @@
       "Mind": {
         "Aggression": 1.0,
         "WeaponProficiency": 0.5,
-        "TalkFrequency": 2.0,
+        "TalkFrequency": 1.0,
         "CanTalk": true,
         "BotTaunts": true,
         "SquadTalk": true,
@@ -199,9 +199,9 @@
       "Patrol": {},
       "Scattering": {
         "ScatterMultiplier": 1.0,
-        "HandDamageRecoilMulti": 1.5,
-        "HandDamageScatteringMinMax": 1.5,
-        "HandDamageAccuracySpeed": 1.5
+        "HandDamageRecoilMulti": 1.35,
+        "HandDamageScatteringMinMax": 1.35,
+        "HandDamageAccuracySpeed": 1.35
       },
       "Shoot": {
         "RecoilMultiplier": 1.0,
@@ -210,8 +210,8 @@
         "MaxPointFireDistance": 80.0,
         "CAN_STOP_SHOOT_CAUSE_ANIMATOR": true,
         "CHANCE_TO_CHANGE_TO_AUTOMATIC_FIRE_100": 100.0,
-        "AUTOMATIC_FIRE_SCATTERING_COEF": 1.5,
-        "BASE_AUTOMATIC_TIME": 0.2,
+        "AUTOMATIC_FIRE_SCATTERING_COEF": 1.1,
+        "BASE_AUTOMATIC_TIME": 0.4,
         "RECOIL_DELTA_PRESS": 0.0
       }
     },
@@ -222,15 +222,15 @@
         "FasterCQBReactionsDistance": 30.0,
         "FasterCQBReactionsMinimum": 0.33,
         "AccuracySpreadMulti": 1.0,
-        "MAX_AIMING_UPGRADE_BY_TIME": 0.15,
-        "COEF_IF_MOVE": 2.0,
+        "MAX_AIMING_UPGRADE_BY_TIME": 0.25,
+        "COEF_IF_MOVE": 1.5,
         "MAX_AIM_TIME": 1.5,
         "SHPERE_FRIENDY_FIRE_SIZE": 0.15,
         "RECALC_MUST_TIME": 1,
         "RECALC_MUST_TIME_MIN": 1,
         "RECALC_MUST_TIME_MAX": 2,
         "DAMAGE_TO_DISCARD_AIM_0_100": 100.0,
-        "BASE_HIT_AFFECTION_DELAY_SEC": 1.0,
+        "BASE_HIT_AFFECTION_DELAY_SEC": 0.77,
         "BASE_HIT_AFFECTION_MIN_ANG": 3.0,
         "BASE_HIT_AFFECTION_MAX_ANG": 5.0
       },
@@ -240,8 +240,8 @@
       "Change": {},
       "Core": {
         "VisibleAngle": 160.0,
-        "VisibleDistance": 250.0,
-        "GainSightCoef": 0.013,
+        "VisibleDistance": 142.0,
+        "GainSightCoef": 0.1,
         "ScatteringPerMeter": 0.045,
         "ScatteringClosePerMeter": 0.12,
         "HearingSense": 1.0,
@@ -252,7 +252,7 @@
         "TimeSinceSeenBeforeThrow": 3.0,
         "DELTA_NEXT_ATTEMPT": 2.0,
         "MIN_DIST_NOT_TO_THROW": 8.0,
-        "GrenadePrecision": 0.05,
+        "GrenadePrecision": 0.01,
         "MIN_THROW_GRENADE_DIST": 8.0,
         "CHANCE_TO_NOTIFY_ENEMY_GR_100": 100.0,
         "DELTA_GRENADE_START_TIME": 0.0,
@@ -291,7 +291,7 @@
       "Mind": {
         "Aggression": 1.0,
         "WeaponProficiency": 0.5,
-        "TalkFrequency": 2.0,
+        "TalkFrequency": 1.0,
         "CanTalk": true,
         "BotTaunts": true,
         "SquadTalk": true,
@@ -305,9 +305,9 @@
       "Patrol": {},
       "Scattering": {
         "ScatterMultiplier": 1.0,
-        "HandDamageRecoilMulti": 1.5,
-        "HandDamageScatteringMinMax": 1.5,
-        "HandDamageAccuracySpeed": 1.5
+        "HandDamageRecoilMulti": 1.35,
+        "HandDamageScatteringMinMax": 1.35,
+        "HandDamageAccuracySpeed": 1.35
       },
       "Shoot": {
         "RecoilMultiplier": 1.0,
@@ -316,8 +316,8 @@
         "MaxPointFireDistance": 80.0,
         "CAN_STOP_SHOOT_CAUSE_ANIMATOR": true,
         "CHANCE_TO_CHANGE_TO_AUTOMATIC_FIRE_100": 100.0,
-        "AUTOMATIC_FIRE_SCATTERING_COEF": 1.5,
-        "BASE_AUTOMATIC_TIME": 0.2,
+        "AUTOMATIC_FIRE_SCATTERING_COEF": 1.1,
+        "BASE_AUTOMATIC_TIME": 0.4,
         "RECOIL_DELTA_PRESS": 0.0
       }
     },
@@ -328,15 +328,15 @@
         "FasterCQBReactionsDistance": 30.0,
         "FasterCQBReactionsMinimum": 0.33,
         "AccuracySpreadMulti": 1.0,
-        "MAX_AIMING_UPGRADE_BY_TIME": 0.15,
-        "COEF_IF_MOVE": 2.0,
+        "MAX_AIMING_UPGRADE_BY_TIME": 0.25,
+        "COEF_IF_MOVE": 1.5,
         "MAX_AIM_TIME": 1.5,
         "SHPERE_FRIENDY_FIRE_SIZE": 0.15,
         "RECALC_MUST_TIME": 1,
         "RECALC_MUST_TIME_MIN": 1,
         "RECALC_MUST_TIME_MAX": 2,
         "DAMAGE_TO_DISCARD_AIM_0_100": 100.0,
-        "BASE_HIT_AFFECTION_DELAY_SEC": 1.0,
+        "BASE_HIT_AFFECTION_DELAY_SEC": 0.77,
         "BASE_HIT_AFFECTION_MIN_ANG": 3.0,
         "BASE_HIT_AFFECTION_MAX_ANG": 5.0
       },
@@ -346,8 +346,8 @@
       "Change": {},
       "Core": {
         "VisibleAngle": 160.0,
-        "VisibleDistance": 250.0,
-        "GainSightCoef": 0.013,
+        "VisibleDistance": 142.0,
+        "GainSightCoef": 0.1,
         "ScatteringPerMeter": 0.045,
         "ScatteringClosePerMeter": 0.12,
         "HearingSense": 1.0,
@@ -358,7 +358,7 @@
         "TimeSinceSeenBeforeThrow": 3.0,
         "DELTA_NEXT_ATTEMPT": 2.0,
         "MIN_DIST_NOT_TO_THROW": 8.0,
-        "GrenadePrecision": 0.05,
+        "GrenadePrecision": 0.01,
         "MIN_THROW_GRENADE_DIST": 8.0,
         "CHANCE_TO_NOTIFY_ENEMY_GR_100": 100.0,
         "DELTA_GRENADE_START_TIME": 0.0,
@@ -397,7 +397,7 @@
       "Mind": {
         "Aggression": 1.0,
         "WeaponProficiency": 0.5,
-        "TalkFrequency": 2.0,
+        "TalkFrequency": 1.0,
         "CanTalk": true,
         "BotTaunts": true,
         "SquadTalk": true,
@@ -411,9 +411,9 @@
       "Patrol": {},
       "Scattering": {
         "ScatterMultiplier": 1.0,
-        "HandDamageRecoilMulti": 1.5,
-        "HandDamageScatteringMinMax": 1.5,
-        "HandDamageAccuracySpeed": 1.5
+        "HandDamageRecoilMulti": 1.35,
+        "HandDamageScatteringMinMax": 1.35,
+        "HandDamageAccuracySpeed": 1.35
       },
       "Shoot": {
         "RecoilMultiplier": 1.0,
@@ -422,8 +422,8 @@
         "MaxPointFireDistance": 80.0,
         "CAN_STOP_SHOOT_CAUSE_ANIMATOR": true,
         "CHANCE_TO_CHANGE_TO_AUTOMATIC_FIRE_100": 100.0,
-        "AUTOMATIC_FIRE_SCATTERING_COEF": 1.5,
-        "BASE_AUTOMATIC_TIME": 0.2,
+        "AUTOMATIC_FIRE_SCATTERING_COEF": 1.1,
+        "BASE_AUTOMATIC_TIME": 0.4,
         "RECOIL_DELTA_PRESS": 0.0
       }
     }

@@ -1,9 +1,9 @@
 {
-  "Name": "6. Nasties custom 5.8.1",
+  "Name": "6. Nasties custom 5.16",
   "Description": "[Modified] Bots react faster, are more accurate, and can see further.",
   "Creator": "capt nasties",
   "SAINVersion": "2.2.2.13",
-  "DateCreated": "05/08/2024 00:00:00",
+  "DateCreated": "05/16/2024 00:00:00",
   "IsCustom": true,
   "PresetCopiedFrom": "4. I Like Pain",
   "CanEditName": true
