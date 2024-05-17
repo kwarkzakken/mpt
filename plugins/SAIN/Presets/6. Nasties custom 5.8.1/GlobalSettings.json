@@ -1,6 +1,6 @@
 {
   "General": {
-    "GlobalDifficultyModifier": 1.1,
+    "GlobalDifficultyModifier": 1.0,
     "PerformanceMode": false,
     "NewDoorOpening": true,
     "LimitAIvsAI": true,

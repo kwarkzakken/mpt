@@ -9,7 +9,7 @@
     "RandomlyAssignedChance": 3.0,
     "MaxLevel": 100.0,
     "RandomChanceIfMeetRequirements": 60.0,
-    "PowerLevelMin": 200.0,
+    "PowerLevelMin": 250.0,
     "PowerLevelMax": 800.0,
     "AggressionMultiplier": 1.0,
     "SearchWaitMultiplier": 3.0,
