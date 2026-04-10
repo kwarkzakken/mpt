@@ -1,0 +1,145 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PANEL",
+    "meta": {
+        "version": "PLCN_v2",
+        "update_url": null
+    },
+    "exported_at": "2025-10-07T15:56:35+00:00",
+    "name": "SPT w/ Fika + ModSync Nubs Updated",
+    "author": "nubston@gort.rocks",
+    "uuid": "7deb607b-33d7-43f9-91e6-a00985ac8cf1",
+    "description": "Fika is a mod for SPT that allows you to play COOP with your friends, packed with ModSync to automaticaly sync all clients mods with the server.",
+    "tags": [],
+    "features": [],
+    "docker_images": {
+        "ghcr.io/parkervcp/yolks:debian": "ghcr.io/parkervcp/yolks:debian"
+    },
+    "file_denylist": [],
+    "startup": "sed -ri /home/container/*_Data/Server/configs/http.json -e \"s/(\\\"ip\\\":\\s*\\\").*(\\\".*)/\\10\\.0\\.0\\.0\\2/gi\" -e \"s/(\\\"backendIp\\\":\\s*\\\").*(\\\".*)/\\1{{SERVER_IP}}\\2/gi\" -e \"s/(.*port.*:\\s*)[0-9]+(.*)/\\1{{SERVER_PORT}}\\2/gi\"; /home/container/SPT.Server;",
+    "config": {
+        "files": "{}",
+        "startup": "{\n    \"done\": \"Server is running\"\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!/bin/bash\r\n# SPT Server Installation Script\r\n#\r\n# Server Files: /mnt/server\r\nSPT_URL=\"https://github.com/sp-tarkov/server\"\r\nFIKA_URL=\"https://github.com/project-fika/Fika-Server\"\r\n \r\nprintf \"\\033[1m\\033[33mcontainer@pterodactyl~ \\033[0m%s\\n\" \"Downloading installation dependencies...\"\r\napt -q update\r\napt -q install -y git curl git-lfs\r\n\r\ncd /mnt/server\r\n\r\n# Remove old folders\r\nprintf \"\\033[1m\\033[33mcontainer@pterodactyl~ \\033[0m%s\\n\" \"Cleaning up old folders if they exist.\"\r\nrm -rvf /mnt/server/*_Data /mnt/server/SPT.Server /mnt/server/user/mods/fika-server /mnt/server/user/mods/[Cc]orter-[Mm]od[Ss]ync\r\n\r\n# Download SPT server build files\r\nmkdir -p /mnt/server/tmp\r\nprintf \"\\033[1m\\033[33mcontainer@pterodactyl~ \\033[0m%s\\n\" \"Downloading SPT...\"\r\nif [[ ${SPT_ADVANCED} -eq 0 ]]; then\r\n  git clone $SPT_URL /mnt/server/tmp\r\n  cd /mnt/server/tmp\r\n  if [[ -n ${SPT_TAG} ]]; then\r\n    git checkout -q --progress tags/$SPT_TAG\r\n  fi\r\nelse\r\n  git clone --branch $SPT_BRANCH $SPT_URL /mnt/server/tmp\r\n  cd /mnt/server/tmp\r\n  if [[ -n ${SPT_COMMIT} ]]; then\r\n    git checkout -q --progress $SPT_COMMIT\r\n  fi\r\nfi\r\ngit-lfs fetch --all\r\ngit-lfs pull\r\nprintf \"\\033[1m\\033[33mcontainer@pterodactyl~ \\033[0m%s\\n\" \"Download done.\"\r\n\r\ncd /mnt/server/tmp/project\r\n\r\n# Install NodeJS in builder\r\nprintf \"\\033[1m\\033[33mcontainer@pterodactyl~ \\033[0m%s\\n\" \"Downloading required node version...\"\r\ncurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash\r\nsource ~/.bashrc\r\nnvm install\r\n \r\n# Build SPT server\r\nprintf \"\\033[1m\\033[33mcontainer@pterodactyl~ \\033[0m%s\\n\" \"Installing build requirements...\"\r\nnode --max-old-space-size=4096 $(which npm) install\r\nprintf \"\\033[1m\\033[33mcontainer@pterodactyl~ \\033[0m%s\\n\" \"Building SPT Server...\"\r\nnode --max-old-space-size=4096 $(which npm) run build:release\r\n\r\n# Move server to definitive folder\r\nprintf \"\\033[1m\\033[33mcontainer@pterodactyl~ \\033[0m%s\\n\" \"Transfering built files to server root.\"\r\ncd /mnt/server\r\nmv /mnt/server/tmp/project/build/* /mnt/server\r\nSPT_EXE=$(ls /mnt/server/ | grep .exe)\r\nmv /mnt/server/$SPT_EXE /mnt/server/SPT.Server\r\n\r\n# Clean up the build files\r\nprintf \"\\033[1m\\033[33mcontainer@pterodactyl~ \\033[0m%s\\n\" \"Cleaning up ...\"\r\nrm -rf /mnt/server/tmp # Remove SPT build files\r\n\r\n# Download Fika\r\nprintf \"\\033[1m\\033[33mcontainer@pterodactyl~ \\033[0m%s\\n\" \"Downloading Fika...\"\r\ncd /mnt/server\r\nif [[ ${SPT_ADVANCED} -eq 0 ]]; then\r\n  GIT_API_LINK=\"https://api.github.com/repos/project-fika/Fika-Server/releases/tags/${FIKA_VERSION}\"\r\n  DOWNLOAD_LINK=$(curl -sSL ${GIT_API_LINK} | jq -r '.assets[].browser_download_url|select(match(\"fika-server\"))')\r\n  curl -L \"${DOWNLOAD_LINK}\" -o \"${DOWNLOAD_LINK##*/}\"\r\n  unzip -q ${DOWNLOAD_LINK##*/}\r\n  rm -rf ${DOWNLOAD_LINK##*/}\r\nelse\r\n  mkdir -p /mnt/server/tmp\r\n  git clone --branch ${FIKA_BRANCH} ${FIKA_URL} /mnt/server/tmp\r\n  cd /mnt/server/tmp\r\n  if [[ -n ${FIKA_COMMIT} ]]; then\r\n    git checkout -q --progress $FIKA_COMMIT\r\n  fi\r\n  printf \"\\033[1m\\033[33mcontainer@pterodactyl~ \\033[0m%s\\n\" \"Building Fika...\"\r\n  npm i --include=dev\r\n  npm run build\r\n  cd /mnt/server\r\n  mv /mnt/server/tmp/dist/fika-server.zip /mnt/server\r\n  unzip -q fika-server.zip\r\n  rm -rf /mnt/server/tmp /mnt/server/fika-server.zip\r\nfi\r\n\r\n# Download ModSync\r\nprintf \"\\033[1m\\033[33mcontainer@pterodactyl~ \\033[0m%s\\n\" \"Downloading ModSync...\"\r\ncd /mnt/server\r\nGIT_API_LINK=\"https://api.github.com/repos/c-orter/modsync/releases/tags/${MODSYNC_VERSION}\"\r\nDOWNLOAD_LINK=$(curl -sSL ${GIT_API_LINK} | jq -r '.assets[].browser_download_url|select(match(\"ModSync\"; \"i\"))')\r\ncurl -L \"${DOWNLOAD_LINK}\" -o \"${DOWNLOAD_LINK##*/}\"\r\nunzip -q ${DOWNLOAD_LINK##*/}\r\nrm -rf ${DOWNLOAD_LINK##*/}\r\n\r\nprintf \"\\033[1m\\033[33mcontainer@pterodactyl~ \\033[0m%s\\n\" \"Creating ModSync default folders...\"\r\nmkdir -vp BepInEx/{plugins,patchers,config}\r\n\r\n# Set files permissions (might not work if not done)\r\nchmod o+rwx /mnt/server -R\r\n\r\nprintf \"\\033[1m\\033[33mcontainer@pterodactyl~ \\033[0m%s\\n\" \"Install complete.\"\r\nexit 0",
+            "container": "ghcr.io/parkervcp/installers:debian",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "sort": 7,
+            "name": "ADVANCED: Fika Branch",
+            "description": "",
+            "env_variable": "FIKA_BRANCH",
+            "default_value": "main",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": [
+                "required",
+                "string",
+                "max:20"
+            ]
+        },
+        {
+            "sort": 8,
+            "name": "ADVANCED: Fika Commit",
+            "description": "",
+            "env_variable": "FIKA_COMMIT",
+            "default_value": "060b19f",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": [
+                "required",
+                "string",
+                "max:20"
+            ]
+        },
+        {
+            "sort": 2,
+            "name": "Fika Version",
+            "description": "Fika version to install",
+            "env_variable": "FIKA_VERSION",
+            "default_value": "v2.4.8",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": [
+                "required",
+                "string",
+                "max:20"
+            ]
+        },
+        {
+            "sort": 3,
+            "name": "ModSync Version",
+            "description": "ModSync version to install",
+            "env_variable": "MODSYNC_VERSION",
+            "default_value": "v0.11.1",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": [
+                "required",
+                "string",
+                "max:20"
+            ]
+        },
+        {
+            "sort": 4,
+            "name": "ADVANCED: Enable",
+            "description": "Enable specifing the SPT server branch and commit to use.",
+            "env_variable": "SPT_ADVANCED",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": [
+                "required",
+                "boolean"
+            ]
+        },
+        {
+            "sort": 5,
+            "name": "ADVANCED: SPT Branch",
+            "description": "SPT server git branch to install.",
+            "env_variable": "SPT_BRANCH",
+            "default_value": "master",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": [
+                "required",
+                "string",
+                "max:20"
+            ]
+        },
+        {
+            "sort": 6,
+            "name": "ADVANCED: SPT Commit",
+            "description": "Specify the SPT server commit to use.",
+            "env_variable": "SPT_COMMIT",
+            "default_value": "e4ba92b4a6",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": [
+                "required",
+                "string",
+                "max:20"
+            ]
+        },
+        {
+            "sort": 1,
+            "name": "SPT Release Tag",
+            "description": "SPT release tag to install.",
+            "env_variable": "SPT_TAG",
+            "default_value": "3.11.4",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": [
+                "required",
+                "string",
+                "max:20"
+            ]
+        }
+    ]
+}
